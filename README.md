@@ -19,7 +19,7 @@ git clone https://github.com/bryandmc/lnav-formats.git
 
 2. create necessary directories (if necessary)
 ```bash
-mkdir -p ~/.lnav/formmats/installed
+mkdir -p ~/.lnav/formats/installed
 ```
 
 3. copy into correct directory
