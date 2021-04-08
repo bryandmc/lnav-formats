@@ -1,0 +1,53 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "ns_server_log": {
+        "title": "ns_server debug log format",
+        "description": "Debug logging used in ns_server",
+        "url": "http://example.com/log-format.html",
+        "regex": {
+            "basic": {
+                "pattern": "^\\[(?<server>[\\w_-]*):(?<level>\\w*),(?<timestamp>[^,]*),(?<user_hostname>.*?):(?<proc_name>[\\w_-]*)?<(?<proc_id>.*?)>:(?<module>\\w*):(?<function>\\w*):(?<line_num>\\d*?)\\](?<body>(?:.|\n|\r)*?)"
+            }
+        },
+        "level-field": "level",
+        "level": {
+            "info": "info",
+            "debug": "debug",
+            "error": "error",
+            "warning": "warn"
+        },
+        "value": {
+            "server": {
+                "kind": "string",
+                "identifier": true
+            },
+            "user_hostname": {
+                "kind": "string",
+                "identifier": true
+            },
+            "proc_name": {
+                "kind": "string",
+                "identifier": true
+            },
+            "proc_id": {
+                "kind": "string",
+                "identifier": true
+            },
+            "module": {
+                "kind": "string",
+                "identifier": true
+            },
+            "function": {
+                "kind": "string",
+                "identifier": true
+            },
+            "line_num": {
+                "kind": "integer",
+                "identifier": true
+            }
+        },
+        "sample": [{
+            "line": "[ns_server:info,2021-04-01T06:34:03.854-07:00,nonode@nohost:<0.139.0>:ns_server:init_logging:151]Started & configured logging"
+        }]
+    }
+}
